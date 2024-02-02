@@ -1,3 +1,4 @@
+import 'package:checkout/pages/add_to_basket_page/add_to_basket_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
@@ -20,10 +21,10 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           backgroundColor: Colors.grey[50],
           elevation: 0.0,
-          title: Text("Basket"),
-          actions: [
+          title: const Text("Basket"),
+          actions: const [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: CircleAvatar(),
             )
           ],
@@ -32,15 +33,20 @@ class _HomePageState extends State<HomePage> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15.0),
           ),
-          onPressed: () {},
-          label: Text(
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const AddToBasketPage()));
+          },
+          label: const Text(
             "Add to Basket",
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 16.0,
             ),
           ),
-          icon: FaIcon(
+          icon: const FaIcon(
             FontAwesomeIcons.basketShopping,
             size: 18.0,
           ),
@@ -48,7 +54,7 @@ class _HomePageState extends State<HomePage> {
         body: SizedBox(
           width: size.width,
           height: size.height,
-          child: Column(
+          child: const Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
